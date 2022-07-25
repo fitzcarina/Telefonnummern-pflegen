@@ -1,0 +1,17 @@
+﻿<Window x:Class="test_aufbau.Liste"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:test_aufbau"
+        mc:Ignorable="d"
+        Title="Liste" Height="450" Width="800">
+    <Grid>
+        <Button Content="Telefonliste zweispaltig"  Click="zweispaltig_p" HorizontalAlignment="Left" Height="55" Margin="580,199,0,0" VerticalAlignment="Top" Width="167"/>
+        <Button Content=" Telefonliste Handynummer" Click="handynummer_p" HorizontalAlignment="Left" Height="55" Margin="49,199,0,0" VerticalAlignment="Top" Width="167" RenderTransformOrigin="-0.233,0.272"/>
+        <Button Content="Telefonliste Schmal" Click="einspaltig_p" HorizontalAlignment="Center" Height="55" Margin="0,199,0,0" VerticalAlignment="Top" Width="168"/>
+        <Label Content="Bitte wählen Sie aus, welche Liste Sie generieren möchten:" HorizontalAlignment="Left" Margin="90,53,0,0" VerticalAlignment="Top" Width="638" Height="44" FontSize="24"/>
+        <Button Content="Alle Telefonlisten" Click="Button_Click" HorizontalAlignment="Left" Height="57" Margin="49,326,0,0" VerticalAlignment="Top" Width="698"/>
+
+    </Grid>
+</Window>

@@ -1,0 +1,16 @@
+﻿<Window x:Class="test_aufbau.richtigloeschen"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:test_aufbau"
+        mc:Ignorable="d"
+        Title="richtigloeschen" Height="450" Width="800">
+    <Grid>
+        <Button Content="Nein "  Click="Nein" HorizontalAlignment="Left" Height="111" Margin="44,245,0,0" VerticalAlignment="Top" Width="324" Background="#FF78DF4E"/>
+        <Button Content="Ja"  Click="Ja" HorizontalAlignment="Left" Height="111" Margin="415,245,0,0" VerticalAlignment="Top" Width="324" Background="#FFEE1212"/>
+        <Label Content=""  x:Name="ueberschrift" HorizontalContentAlignment="Center" HorizontalAlignment="Center"  Height="84" Margin="0,40,0,0" VerticalAlignment="Top" Width="712" FontSize="25" />
+        <Label Content=""  x:Name="ueberschrift2"  HorizontalContentAlignment="Center" HorizontalAlignment="Center"  Height="84" Margin="0,124,0,0" VerticalAlignment="Top" Width="712" FontSize="30"/>
+
+    </Grid>
+</Window>
