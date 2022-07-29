@@ -82,7 +82,7 @@ namespace test_aufbau
                                 //durchwahl darf nur 2 Zeichen haben oder gar keine
                               if (durchwahl_p == true && durchwahl_string.Length > 3 || durchwahl_p == true && durchwahl_string.Length ==1)
                                 {
-                                    MessageBox.Show("Bitte geben Sie eine Durchwahl ein, die 2 Zeichen besitzt");
+                                    MessageBox.Show("Bitte geben Sie eine Durchwahl ein, die 3 Zeichen hat");
                                 }
                               //es wird geprüft, ob eine der 3 felder gefüllt sind, weil 1 min gefüllt sein muss
                                 else if(durchwahl_p == true && durchwahl_string.Length == 2 || durchwahl_p == true && durchwahl_string.Length == 3  ||  durchwahl_string.Length==0)
@@ -93,7 +93,7 @@ namespace test_aufbau
                                         MessageBox.Show("Eines der Felder Kurzwahl, Durchwahl oder Handy muss gefüllt werden");
                                     }
                                     //gibt true zurück und stoßt das jeweilige SQL statement somit ab und gibt zurück das die Prüfung erfolgreich war
-                                   else if (durchwahl_string.Length == 2 || durchwahl_string.Length == 2 || durchwahl_string.Length == 0 || handy.Length >1 || kurzwahl_string.Length >1) //
+                                   else if (durchwahl_string.Length == 2 || durchwahl_string.Length == 2 || durchwahl_string.Length == 3 || durchwahl_string.Length == 3|| durchwahl_string.Length == 0 || handy.Length >1 || kurzwahl_string.Length >1) //
                                     {
                                             return true;
                                     }
@@ -163,6 +163,7 @@ namespace test_aufbau
             }
         }
   // SQL Statement mit Insert
+  //TEst
         public static void sqlInsert(string id, string vorname, bool vorname_p, bool nachname_p, string nachname, string handy, bool kurzwahl_p, int n, string durchwahl_string, string kurzwahl_string, bool durchwahl_p)
         {
             System.Data.SqlClient.SqlConnection sqlConnection1 =
@@ -180,6 +181,27 @@ namespace test_aufbau
         {
             string vorname_null = vorname[0].ToString().ToLower();
             return vorname_null + "." + nachname.ToLower();
+        }
+
+        public static bool SchonVorhandenerUser(string vorname, string nachname)
+        {
+            using (SqlConnection conn = new SqlConnection(db_connection()))
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("  Select Count(*) from tbl_Telefonnummern   where Vorname = '"+vorname+"' AND  Nachname= '"+nachname+"'", conn);
+                int anzahl = (Int32)cmd.ExecuteScalar();
+               
+         
+            if (anzahl > 0)
+            {
+                    MessageBox.Show("Es gibt Bereits den Mitarbeiter "+vorname + nachname+" mit einer Telefonnummer");
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+            }
         }
     }
 }

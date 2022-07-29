@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "176bOqRqhkYdy7bU9nRYw42jDzDjB35wylTE/WsF8Uge6Q5D3dpjmatohMxZKSeTn8Hu8YgHWPNrdoXjWorbGA==",
+  "dgSpecHash": "qY1Io+peq027QQMQ6EeLJ5MFxPxRlLQsuNf63bfPnrtM5NuaBX5ucwClhPjYc6tSu6JkqSUMzynRhNdyxl7soA==",
   "success": true,
-  "projectFilePath": "O:\\Programme\\Telefonnummern\\test aufbau - Kopie\\test aufbau\\Telefonlisten.csproj",
+  "projectFilePath": "O:\\Programme\\Telefonnummern\\Telefonliste Pflegen\\test aufbau\\Telefonlisten.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\c.fitz\\.nuget\\packages\\azure.core\\1.6.0\\azure.core.1.6.0.nupkg.sha512",
     "C:\\Users\\c.fitz\\.nuget\\packages\\azure.identity\\1.3.0\\azure.identity.1.3.0.nupkg.sha512",

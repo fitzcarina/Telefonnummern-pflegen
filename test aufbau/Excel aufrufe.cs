@@ -42,6 +42,8 @@ namespace test_aufbau
                 reader.Close();
                 try
                 {
+                    
+                    MessageBox.Show("Bitte Warten Sie Kurz Ihre Excel Liste wird generiert");
                     //Excel wird erstellt
                     Microsoft.Office.Interop.Excel.Application xlApp;
                     Microsoft.Office.Interop.Excel.Workbook xlWorkBook;
@@ -69,8 +71,8 @@ namespace test_aufbau
                         xlWorkSheet.Cells[i + 2, 3] = kurzwahl[i];
                         xlWorkSheet.Cells[i + 2, 2] = handy[i];
                         xlWorkSheet.Cells[i + 2, 4] = NachVor[i];
-                        xlWorkSheet.Cells[i + 2, 5] = kurzwahl[i];
-                        xlWorkSheet.Cells[i + 2, 6] = handy[i];
+                        xlWorkSheet.Cells[i + 2, 6] = kurzwahl[i];
+                        xlWorkSheet.Cells[i + 2, 5] = handy[i];
                     }
                     chartRange = xlWorkSheet.get_Range("a1", "f1");
                     chartRange = xlWorkSheet.get_Range("a1", "f1");
@@ -122,7 +124,18 @@ namespace test_aufbau
                     {
                         GC.Collect();
                     }
+                    
                 }
+
+
+
+
+
+
+
+
+
+
             }
         }
         public static void TelefonSchmal()
@@ -149,9 +162,10 @@ namespace test_aufbau
                     handy[i] = reader[4].ToString();
                 }
                 reader.Close();
-
+                MessageBox.Show("Bitte Warten Sie Kurz Ihre Excel Liste wird generiert");
                 try
                 {
+
                     Microsoft.Office.Interop.Excel.Application xlApp;
                     Microsoft.Office.Interop.Excel.Workbook xlWorkBook;
                     Microsoft.Office.Interop.Excel.Worksheet xlWorkSheet;
@@ -271,6 +285,7 @@ namespace test_aufbau
                         handy[i] = reader[4].ToString();
                     }
                 reader.Close();
+                MessageBox.Show("Bitte Warten Sie Kurz Ihre Excel Liste wird generiert");
                 try
                 {
                     int spalte1 = anzahl / 2;
@@ -336,12 +351,14 @@ namespace test_aufbau
                         xlWorkSheet.Cells[i + 2, 4] = handy[i];
                     }
                     int zwischen = anzahl - rechts;
+
+
                     for (int i = 0; i < links; i++)
                     {
-                        xlWorkSheet.Cells[i + 2, 5] = durchwahl[i + links];
+                        xlWorkSheet.Cells[i + 2, 5] = durchwahl[j + links];
                         xlWorkSheet.Cells[i + 2, 6] = NachVor[j + links];
-                        xlWorkSheet.Cells[i + 2, 7] = kurzwahl[i + links];
-                        xlWorkSheet.Cells[i + 2, 8] = handy[i + links];
+                        xlWorkSheet.Cells[i + 2, 7] = kurzwahl[j + links];
+                        xlWorkSheet.Cells[i + 2, 8] = handy[j + links];
                         j++;
                         if (i + 1 == links)
                         {

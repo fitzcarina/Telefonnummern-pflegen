@@ -21,10 +21,19 @@ namespace test_aufbau
                 int s;
                 int n;
                 string id = "";
+
                     if (Class1.pruefen(id,  Vorname.Text, Int32.TryParse(Vorname.Text, out s), Int32.TryParse(Nachname.Text, out s), Nachname.Text, Handy.Text, Int32.TryParse(Kurzwahl.Text, out n), n, Durchwahl.Text, Kurzwahl.Text, Int32.TryParse(Durchwahl.Text, out s)) == true)
                     {
-                        Class1.sqlInsert(id,  Vorname.Text, Int32.TryParse(Vorname.Text, out s), Int32.TryParse(Nachname.Text, out s), Nachname.Text, Handy.Text, Int32.TryParse(Kurzwahl.Text, out n), n, Durchwahl.Text, Kurzwahl.Text, Int32.TryParse(Durchwahl.Text, out s));
-                    this.Close();
+                    
+                    if(Class1.SchonVorhandenerUser(Vorname.Text, Nachname.Text)== true)
+                    {
+
+                        Class1.sqlInsert(id, Vorname.Text, Int32.TryParse(Vorname.Text, out s), Int32.TryParse(Nachname.Text, out s), Nachname.Text, Handy.Text, Int32.TryParse(Kurzwahl.Text, out n), n, Durchwahl.Text, Kurzwahl.Text, Int32.TryParse(Durchwahl.Text, out s));
+                        this.Close();
+                    }
+
+
+
                 }
             }
             else
